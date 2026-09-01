@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-arabic: 'Amiri', serif;
+    --font-arabic-sans: 'Noto Sans Arabic', sans-serif;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
+.font-arabic-sans {
+  font-family: var(--font-arabic-sans);
+}
+
+/* Custom twilight text glow */
+.text-shadow-twilight {
+  text-shadow: 0 0 20px rgba(184, 209, 237, 0.4), 0 0 40px rgba(114, 146, 191, 0.2);
+}
+
+.text-shadow-moonlight {
+  text-shadow: 0 0 15px rgba(226, 238, 255, 0.5), 0 0 30px rgba(155, 186, 224, 0.3);
+}
+
+.text-shadow-gold {
+  text-shadow: 0 0 16px rgba(227, 146, 100, 0.4);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 6, 15, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(114, 146, 191, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(227, 146, 100, 0.6);
+}
+
+/* Reader Prose formatting */
+.novel-prose {
+  line-height: inherit;
+}
+
+.novel-prose p {
+  margin-bottom: 1.6em;
+  line-height: inherit;
+}
+
+.novel-prose p.first-of-chapter::first-letter {
+  font-family: var(--font-display);
+  float: left;
+  font-size: 3.2em;
+  line-height: 0.85;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+  color: #e39264;
+  text-shadow: 0 0 12px rgba(227, 146, 100, 0.4);
+}
+
+.novel-prose blockquote {
+  font-style: italic;
+  margin: 2em 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 2px solid #7292bf;
+  background: rgba(114, 146, 191, 0.05);
+  border-radius: 0 16px 16px 0;
+  color: #d2e4f6;
+}
+
+.novel-prose[dir="rtl"] blockquote {
+  border-left: none;
+  border-right: 2px solid #7292bf;
+  border-radius: 16px 0 0 16px;
+}
+
+.novel-prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.4em;
+  margin-top: 2.2em;
+  margin-bottom: 0.8em;
+  letter-spacing: 0.08em;
+  color: #edf4fd;
+}
+
+.novel-prose h3 {
+  font-family: var(--font-display);
+  font-size: 1.2em;
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+  letter-spacing: 0.05em;
+  color: #dce7f5;
+}
+
+.novel-prose hr {
+  margin: 2.5em auto;
+  border: 0;
+  text-align: center;
+}
+
+.novel-prose hr::before {
+  content: '✦   ✦   ✦';
+  letter-spacing: 0.6em;
+  color: #e39264;
+  opacity: 0.6;
+  font-size: 0.85em;
+}
+
+/* Atmospheric Animations */
+@keyframes glideEagle {
+  0% {
+    transform: translateX(-15vw) translateY(0px) scale(0.85);
+  }
+  50% {
+    transform: translateX(50vw) translateY(-14px) scale(1);
+  }
+  100% {
+    transform: translateX(115vw) translateY(6px) scale(0.9);
+  }
+}
+
+.animate-glide-eagle {
+  animation: glideEagle 32s linear infinite;
+}
+
+@keyframes driftMist {
+  0% {
+    transform: translateX(-25%);
+  }
+  50% {
+    transform: translateX(15%);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+.animate-drift-mist {
+  animation: driftMist 45s ease-in-out infinite;
+}
+
+@keyframes gentleSway {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-gentle-sway {
+  animation: gentleSway 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 10px rgba(114, 146, 191, 0.3));
+  }
+  50% {
+    opacity: 0.65;
+    filter: drop-shadow(0 0 20px rgba(227, 146, 100, 0.5));
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}

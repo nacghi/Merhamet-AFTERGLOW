@@ -1,0 +1,6 @@
+{
+  "name": "Afterglow - Novel & Creator Studio",
+  "description": "Interactive novel reading experience and creator studio for Afterglow with chapters, characters, scenes, visual gallery, and universe lore.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
